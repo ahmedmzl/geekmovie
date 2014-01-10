@@ -1,0 +1,31 @@
+<head>
+  <title>geekmovie</title>
+</head>
+
+<body>
+  {{loginButtons}}
+  {{> header}}
+  {{> moviesList}}
+</body>
+
+<template name="header">
+  
+  <h1>Judge the geek movies!</h1>
+     {{greeting}}
+</template>
+
+
+<template name="moviesList">
+  <ul>
+    {{#each movies}}
+    <li>
+      <b>
+        {{title}}
+      </b>lead cast by {{cast}} ({{votes}} votes)
+      {{#if currentUser}}
+      <input type="button" value="vote"/>
+      {{/if}}
+    </li>
+    {{/each}}
+  </ul>
+</template>
